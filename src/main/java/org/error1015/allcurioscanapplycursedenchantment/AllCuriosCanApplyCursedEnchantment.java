@@ -6,7 +6,5 @@ import net.minecraftforge.fml.common.Mod;
 public class AllCuriosCanApplyCursedEnchantment {
     public static final String MODID = "allcurioscanapplycursedenchantment";
 
-    public AllCuriosCanApplyCursedEnchantment() {
-
-    }
+    public AllCuriosCanApplyCursedEnchantment() {}
 }
