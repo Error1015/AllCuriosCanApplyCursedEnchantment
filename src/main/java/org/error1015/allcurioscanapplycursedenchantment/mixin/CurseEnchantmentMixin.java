@@ -5,6 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.common.extensions.IForgeEnchantment;
+import org.error1015.allcurioscanapplycursedenchantment.Config;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,7 +24,7 @@ public abstract class CurseEnchantmentMixin implements IForgeEnchantment {
     @Overwrite
     public boolean canEnchant(ItemStack pStack) {
         Enchantment enchantment = (Enchantment) (Object) this;
-        if (enchantment != null && enchantment.isCurse()) {
+        if (Config.enable && enchantment != null && enchantment.isCurse()) {
             // 如果物品是ICurioItem或者物品的标签中包含curios命名空间下的标签，则允许该物品使用该 enchantment
             if (pStack.getItem() instanceof ICurioItem || pStack.getTags().anyMatch(this::allCuriosCanApplyCursedEnchantment$handleCuriosTag)) {
                 return true;
