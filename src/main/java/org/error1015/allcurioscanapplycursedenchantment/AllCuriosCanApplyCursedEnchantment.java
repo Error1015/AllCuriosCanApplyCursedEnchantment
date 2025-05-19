@@ -10,6 +10,6 @@ public class AllCuriosCanApplyCursedEnchantment {
 
     public AllCuriosCanApplyCursedEnchantment() {
         ModLoadingContext modLoadingContext = ModLoadingContext.get();
-        modLoadingContext.registerConfig(ModConfig.Type.COMMON, Config.builder.build());
+        modLoadingContext.registerConfig(ModConfig.Type.COMMON, Config.spec);
     }
 }

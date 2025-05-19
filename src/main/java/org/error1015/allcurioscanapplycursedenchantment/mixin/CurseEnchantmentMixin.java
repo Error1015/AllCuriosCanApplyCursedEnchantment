@@ -24,7 +24,7 @@ public abstract class CurseEnchantmentMixin implements IForgeEnchantment {
     @Overwrite
     public boolean canEnchant(ItemStack pStack) {
         Enchantment enchantment = (Enchantment) (Object) this;
-        if (Config.enable && enchantment != null && enchantment.isCurse()) {
+        if (Config.enable.get() && enchantment != null && enchantment.isCurse()) {
             // 如果物品是ICurioItem或者物品的标签中包含curios命名空间下的标签，则允许该物品使用该 enchantment
             if (pStack.getItem() instanceof ICurioItem || pStack.getTags().anyMatch(this::allCuriosCanApplyCursedEnchantment$handleCuriosTag)) {
                 return true;
