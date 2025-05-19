@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 @Mixin(Enchantment.class)
@@ -35,6 +36,6 @@ public abstract class CurseEnchantmentMixin implements IForgeEnchantment {
 
     @Unique
     private boolean allCuriosCanApplyCursedEnchantment$handleCuriosTag(TagKey<Item> itemTagKey) {
-        return itemTagKey.location().getNamespace().equals("curios");
+        return itemTagKey.location().getNamespace().equals(CuriosApi.MODID);
     }
 }

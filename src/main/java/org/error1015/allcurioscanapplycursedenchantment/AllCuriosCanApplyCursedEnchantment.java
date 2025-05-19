@@ -9,7 +9,7 @@ public class AllCuriosCanApplyCursedEnchantment {
     public static final String MODID = "allcurioscanapplycursedenchantment";
 
     public AllCuriosCanApplyCursedEnchantment() {
-        ModLoadingContext modLoadingContext = ModLoadingContext.get();
+        var modLoadingContext = ModLoadingContext.get();
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, Config.spec);
     }
 }
